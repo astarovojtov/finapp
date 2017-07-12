@@ -1,0 +1,49 @@
+<template name="expense">
+  <li class="{{ #if checked }}checked{{ /if }} 
+             {{ #if provate }}private{{ /if }}">
+    <!-- &times; for awkward cross -->
+    <!--
+    <input type="checkbox"
+           checked={{ checked }} 
+           class="toggle-checked" />
+     -->
+    
+      <form class="update-expense">
+    <!-- 
+        <input type="text" 
+               value="{{ text }}"
+               placeholder="{{ text }}" 
+               name="text" /> 
+    -->
+        <input type="name" 
+               value="{{ name }}"
+               placeholder="{{ name }}" 
+               name="name" />
+        <input type="sum" 
+               value="{{ sum }}"
+               placeholder="{{ sum }}" 
+               name="sum" />
+        <input type="tag" 
+               value="{{ tag }}"
+               placeholder="{{ tag }}" 
+               name="tag" />
+    </form>
+    <div class="expense-properties">
+      <span class="text">
+        <strong>{{ username }}</strong>
+      </span>
+
+      {{ #if isOwner }}
+        <button class="toggle-private">
+          {{ #if private }}
+            Private
+          {{ else }}
+            Public
+          {{ /if }}
+        </button>
+      
+        <button class="delete">&#x274C;</button>
+      {{/if}}
+    </div>
+  </li>
+</template>

@@ -1,0 +1,30 @@
+<body>
+  <div class="container">
+    <header>
+      <h1>Latest Expenses ( {{ incompleteCount }} )</h1>
+       {{> loginButtons }}
+    </header>
+    
+    {{ #if currentUser }}
+    <form class="new-expense">
+      <input type="text" 
+             name="text"
+             class="expense-input"
+             placeholder="Type to add new expense" />
+    </form>
+    {{/if}}
+    
+    <ul>
+      {{#each expenses}}
+        {{> expense}}
+      {{/each}}
+    </ul>
+    <!-- 
+    <label class="hide-completed">
+      <input type="checkbox" />
+      Hide Completed Expenses
+    </label>    
+    !-->
+  </div>
+</body>
+
